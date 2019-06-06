@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import {freeapiService} from './services/freeApi.services'
-import { Comments } from './class/comments';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -9,12 +8,10 @@ import { Comments } from './class/comments';
 export class AppComponent {
 
     constructor (){}
-    
-
-  listComment:Comments[];
+  
 
     ngOnInit(){
-     
+       
     }
 
  

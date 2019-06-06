@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
-import { RouterModule } from '@angular/router';
+import { RouterModule,Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { freeapiService } from './services/freeApi.services';
 import { HttpClientModule } from '@angular/common/http';
@@ -11,6 +11,14 @@ import { AppsettingComponent } from './components/appsetting/appsetting.componen
 import { AppmenuComponent } from './components/appmenu/appmenu.component';
 import { PageHomeComponent } from './components/page-home/page-home.component';
 import { PageDetailComponent } from './components/page-detail/page-detail.component';
+import {FormsModule} from '@angular/forms';
+import { DataTablesModule } from 'angular-datatables';
+
+const appRoutes: Routes = [
+  {path: 'home', component: PageHomeComponent},
+  {path: 'detail', component: PageDetailComponent},
+  {path: '', component: PageHomeComponent}
+]
 
 @NgModule({
   declarations: [
@@ -26,11 +34,9 @@ import { PageDetailComponent } from './components/page-detail/page-detail.compon
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    RouterModule.forRoot([
-      {path: 'home', component: PageHomeComponent},
-      {path: 'detail', component: PageDetailComponent},
-      {path: '', component: PageHomeComponent}
-  ])
+    FormsModule,
+    DataTablesModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [
     freeapiService

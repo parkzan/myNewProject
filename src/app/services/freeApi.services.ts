@@ -1,5 +1,4 @@
 import { NgModule, Injectable } from '@angular/core';
-import { InjectSetupWrapper } from '@angular/core/testing';
 import { Observable} from 'rxjs';
 import { HttpClient} from '@angular/common/http';
 
@@ -7,7 +6,9 @@ import { HttpClient} from '@angular/common/http';
 export class freeapiService{
     constructor (private httpClient: HttpClient){}
 
-    getComments(): Observable<any>{
-        return this.httpClient.get("https://jsonplaceholder.typicode.com/get/1/comments");
+    getComments():Observable<any>{
+        const url = "https://jsonplaceholder.typicode.com/get/1/comments";
+        const response =  this.httpClient.get(url);
+        return response;
     }
 }

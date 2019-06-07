@@ -13,13 +13,14 @@ import { PageHomeComponent } from './components/page-home/page-home.component';
 import { PageDetailComponent } from './components/page-detail/page-detail.component';
 import {FormsModule} from '@angular/forms';
 import { DataTablesModule } from 'angular-datatables';
+import { PageSystemComponent } from './components/page-system/page-system.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 const appRoutes: Routes = [
   {path: 'home', component: PageHomeComponent},
-  {path: 'detail', component: PageDetailComponent},
+  {path: 'system',component: PageSystemComponent},
   {path: '', component: PageHomeComponent}
 ]
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +29,8 @@ const appRoutes: Routes = [
     AppsettingComponent,
     AppmenuComponent,
     PageHomeComponent,
-    PageDetailComponent
+    PageDetailComponent,
+    PageSystemComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +38,8 @@ const appRoutes: Routes = [
     HttpClientModule,
     FormsModule,
     DataTablesModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    ReactiveFormsModule
   ],
   providers: [
     freeapiService
